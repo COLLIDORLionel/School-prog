@@ -11,7 +11,7 @@
 
 <body>
 
-    include_once('inc/menu.tpl.php');
+    <?php include_once('inc/menu.tpl.php'); ?>
     
     <main class="container md-5">
         <div class="row">
@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Les bases de PHP</h5>
                         <p class="card-text">Adapté aux débutants</p>
-                        <a href="cours.html" class="btn btn-primary">En savoir plus</a>
+                        <a href="cours.php" class="btn btn-primary">En savoir plus</a>
                     </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@
 
 <body>
 
-    include_once('inc/menu.tpl.php');
+    <?php include_once('inc/menu.tpl.php'); ?>
 
     <main class="container mb-5">
 
