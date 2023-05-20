@@ -1,3 +1,7 @@
+<?php
+// inclusion du fichier avec les données
+include('inc/data.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -15,56 +19,22 @@
     
     <main class="container md-5">
         <div class="row">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                <div class="card h-100">
-                    <img src="img/cours-php.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Les bases de PHP</h5>
-                        <p class="card-text">Adapté aux débutants</p>
-                        <a href="cours.php" class="btn btn-primary">En savoir plus</a>
+            <!--
+                boucle `foreach` pour lire tous les éléments du tableau `$courses`
+                (les données de `$courses` sont dans le fichier `inc/data.php`)
+            -->
+            <?php foreach ($courses as $id => $course) : ?>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <img src="img/<?= $course->image ?>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $course->title ?></h5>
+                            <p class="card-text"><?= $course->shortDescription ?></p>
+                            <a href="cours.php?id=<?= $id ?>" class="btn btn-primary">En savoir plus</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                <div class="card h-100">
-                    <img src="img/cours-gdp.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Gestion de projet</h5>
-                        <p class="card-text">Piloter des projets au quotidien</p>
-                        <a href="#" class="btn btn-primary">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                <div class="card h-100">
-                    <img src="img/cours-seo.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">SEO</h5>
-                        <p class="card-text">Lorem ipsum dolor it amet.</p>
-                        <a href="#" class="btn btn-primary">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                <div class="card h-100">
-                    <img src="img/cours-community-manager.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Community manager</h5>
-                        <p class="card-text">Lorem ipsum dolor it amet.</p>
-                        <a href="#" class="btn btn-primary">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                <div class="card h-100">
-                    <img src="img/cours-admin-systeme.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Administrateur système</h5>
-                        <p class="card-text">Lorem ipsum dolor it amet.</p>
-                        <a href="#" class="btn btn-primary">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
         
     </main>

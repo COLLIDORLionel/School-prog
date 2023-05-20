@@ -1,3 +1,19 @@
+<?php
+// inclusion du fichier avec les données
+include('inc/data.php');
+
+// inclusion du fichier qui contiendra nos fonctions
+include('inc/fonctions.php');
+
+// récupération de l'id du cours
+// $_GET est un tableau associatif qui est automatiquement créer par PHP
+// Ce tableau contient les valeurs des paramètres transmis dans l'url (query string)
+$id = $_GET['id'] ?? null;
+
+// recherche le cours par son id
+$course = getCourseOrRedirect($id, $courses);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -17,20 +33,19 @@
 
         <div class="row">
             <div class="col">
-                <h1>Les bases de PHP</h1>
+                <h1><?= $course->title ?></h1>
             </div>
             <div class="col text-end">
-                <span class="badge bg-success">70h</span>
-                <span class="badge bg-warning">790€</span>
+                <span class="badge bg-success"><?= $course->numberOfHours?></span>
+                <span class="badge bg-warning"><?= $course->price?></span>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-6">
-                <img src="img/cours-php.jpg" class="float-start img-fluid" alt="...">
+                <img src="img/<?= $course->image?>" class="float-start img-fluid" alt="image descriptif du cours <?= $course->title ?>">
             </div>
             <div class="col-12 col-md-6">
-                <p>Notre programme a été pensé pour les néophytes. En d'autres termes, pas besoin d'avoir dévoré moults bouquins sur le code ou d'avoir essayé tous les MOOCS possibles pour faire bonne figure dans cette formation. Mais si vous diposez de quelques bases, c'est toujours mieux, on va pas se mentir.</p>
-                <p>Avec ce nouveau langage, on apprend à programmer nos première fonctionnalités pour apporter de la vie dans nos pages web. Ces deux semaines ne sont pas de tout repos mais nous permettent d'apprendre à réaliser de bout en bout un site dynamique et fonctionnel.</p>
+                <?= nl2br($course->description); ?>
             </div>
         </div>
 
@@ -38,12 +53,9 @@
             <div class="col">
                 <h2>Le programme</h2>
                 <ul>
-                    <li>Les variables</li>
-                    <li>Les conditions</li>
-                    <li>Les boucles</li>
-                    <li>Les tableaux</li>
-                    <li>Les classes</li>
-                    <li>Interaction avec une base de données</li>
+                    <?php foreach ($course->programContent as $notion) : ?>
+                        <li><?= $notion ?></li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </div>
@@ -54,23 +66,23 @@
                 <table class="table table-striped">
                     <tr>
                         <td>Dates</td>
-                        <td>14/03/2022 au 18/03/2022</td>
+                        <td><?= $course->classDate ?></td>
                     </tr>
                     <tr>
                         <td>Votre prof</td>
-                        <td>Pierre C.</td>
+                        <td><?= $course->professor ?></td>
                     </tr>
                     <tr>
                         <td>Durée</td>
-                        <td>70h</td>
+                        <td><?= $course->numberOfHours ?></td>
                     </tr>
                     <tr>
                         <td>Modalité</td>
-                        <td>À distance</td>
+                        <td><?= $course->modality ?></td>
                     </tr>
                     <tr>
                         <td>Niveau requis</td>
-                        <td>Débutant</td>
+                        <td><?= $course->requiredLevel ?></td>
                     </tr>
                 </table>
             </div>
