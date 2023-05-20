@@ -3,7 +3,7 @@ School'prog est notre projet fil rouge pour mettre en pratique les connaissances
 
 ## Étapes réalisées
 
-- Réaliser l'intégration avec [Bootstrap 5.1].
+- Réaliser l'intégration avec [Bootstrap 5.1] (Réalisation des pages en pensant mobile first).
 
 
 
