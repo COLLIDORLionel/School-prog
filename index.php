@@ -26,10 +26,10 @@ include('inc/data.php');
             <?php foreach ($courses as $id => $course) : ?>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                     <div class="card h-100">
-                        <img src="img/<?= $course->image ?>" class="card-img-top" alt="...">
+                        <img src="img/<?= $course->getImage() ?>" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title"><?= $course->title ?></h5>
-                            <p class="card-text"><?= $course->shortDescription ?></p>
+                            <h5 class="card-title"><?= $course->getTitle() ?></h5>
+                            <p class="card-text"><?= $course->getShortDescription() ?></p>
                             <a href="cours.php?id=<?= $id ?>" class="btn btn-primary">En savoir plus</a>
                         </div>
                     </div>

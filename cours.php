@@ -33,19 +33,19 @@ $course = getCourseOrRedirect($id, $courses);
 
         <div class="row">
             <div class="col">
-                <h1><?= $course->title ?></h1>
+                <h1><?= $course->getTitle() ?></h1>
             </div>
             <div class="col text-end">
-                <span class="badge bg-success"><?= $course->numberOfHours?></span>
-                <span class="badge bg-warning"><?= $course->price?></span>
+                <span class="badge bg-success"><?= $course->getNumberOfHours()?> h</span>
+                <span class="badge bg-warning"><?= $course->getPrice() ?> €</span>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-6">
-                <img src="img/<?= $course->image?>" class="float-start img-fluid" alt="image descriptif du cours <?= $course->title ?>">
+                <img src="img/<?= $course->getImage()?>" class="float-start img-fluid" alt="image descriptif du cours <?= $course->getTitle() ?>">
             </div>
             <div class="col-12 col-md-6">
-                <?= nl2br($course->description); ?>
+                <?= nl2br($course->getDescription()); ?>
             </div>
         </div>
 
@@ -53,7 +53,7 @@ $course = getCourseOrRedirect($id, $courses);
             <div class="col">
                 <h2>Le programme</h2>
                 <ul>
-                    <?php foreach ($course->programContent as $notion) : ?>
+                    <?php foreach ($course->getProgramContent() as $notion) : ?>
                         <li><?= $notion ?></li>
                     <?php endforeach; ?>
                 </ul>
@@ -66,23 +66,23 @@ $course = getCourseOrRedirect($id, $courses);
                 <table class="table table-striped">
                     <tr>
                         <td>Dates</td>
-                        <td><?= $course->classDate ?></td>
+                        <td><?= $course->getClassDate() ?></td>
                     </tr>
                     <tr>
                         <td>Votre prof</td>
-                        <td><?= $course->professor ?></td>
+                        <td><?= $course->getProfessor() ?></td>
                     </tr>
                     <tr>
                         <td>Durée</td>
-                        <td><?= $course->numberOfHours ?></td>
+                        <td><?= $course->getNumberOfHours() ?></td>
                     </tr>
                     <tr>
                         <td>Modalité</td>
-                        <td><?= $course->modality ?></td>
+                        <td><?= $course->getModality() ?></td>
                     </tr>
                     <tr>
                         <td>Niveau requis</td>
-                        <td><?= $course->requiredLevel ?></td>
+                        <td><?= $course->getRequiredLevel() ?></td>
                     </tr>
                 </table>
             </div>
