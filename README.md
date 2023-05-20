@@ -7,7 +7,7 @@ School'prog est notre projet fil rouge pour mettre en pratique les connaissances
 - Dynamiser la liste des cours sur la page d'accueil ainsi que la page d'information d'un cours avec du [PHP 7.4].
 - Passage en POO :
    - Modification de la visibilité des propriétés de la classe.
-   - Ajout des getters et setters sur les propriétés manquantes.
+   - Ajout des getters et setters manquants.
    - Sécurisation des données de notre objet. Pour cela, on modifiee les setters afin de verifier les données qui sont injectées dans notre objet.
    - Ajout de la méthode `addToProgramContent` qui va ajouter des éléments dans la propriété : `$programContent`.
 
