@@ -168,13 +168,17 @@ class Course {
 
     /**
      * Set the value of NumberOfHours
+     * Only if the parametter is a positif integer
      * 
      * @param int $numberOfHours
      * @return self
      */
     public function setNumberOfHours(int $numberOfHours): self
     {
-        $this->numberOfHours = $numberOfHours;
+        if ($numberOfHours > 0)
+        {
+            $this->numberOfHours = $numberOfHours;
+        }
         return $this;
     }
 
@@ -190,13 +194,17 @@ class Course {
 
     /**
      * Set the value of Price
+     * Only if the parametter is a positif integer
      * 
      * @param int $price
      * @return self
      */
     public function setPrice(int $price): self
     {
-        $this->price = $price;
+        if ($price > 0)
+        {
+            $this->price = $price;
+        }
         return $this;
     }
 
