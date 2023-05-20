@@ -11,14 +11,14 @@ $coursPhp->setImage('cours-php.jpg');
 $coursPhp->setShortDescription('Adapté aux débutants');
 $coursPhp->setDescription('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus sit amet diam rhoncus, at congue magna maximus. Pellentesque ultrices vitae magna ut laoreet. Nunc ac sem faucibus, placerat justo sit amet, posuere quam.
 Suspendisse potenti. Ut sapien turpis, suscipit tristique enim sit amet, eleifend bibendum leo. Maecenas in quam sed nibh feugiat tristique a et lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
-$coursPhp->programContent = [
+$coursPhp->SetProgramContent([
     'Les variables',
     'Les conditions',
     'Les boucles',
     'Les tableaux',
     'Les classes',
     'Interaction avec une base de données'
-];
+]);
 $coursPhp->setNumberOfHours(70);
 $coursPhp->setPrice(790);
 $coursPhp->setClassDate('14/03/2022 au 18/03/2022');
@@ -34,12 +34,20 @@ $coursGDP->setImage('cours-gdp.jpg');
 $coursGDP->setShortDescription('Piloter des projets au quotidien');
 $coursGDP->setDescription('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus lacus sit amet diam rhoncus, at congue magna maximus. Pellentesque ultrices vitae magna ut laoreet. Nunc ac sem faucibus, placerat justo sit amet, posuere quam.
 Suspendisse potenti. Ut sapien turpis, suscipit tristique enim sit amet, eleifend bibendum leo. Maecenas in quam sed nibh feugiat tristique a et lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
-$coursGDP->programContent = [
+/*
+$coursGDP->setProgramContent([
     'Cahier des charges',
     'Les méthodes des gestions de projets',
     'Les intervenants',
     'La communication'
-];
+]);
+*/
+$coursGDP->addToProgramContent('Cahier des charges');
+$coursGDP->addToProgramContent('Les méthodes des gestions de projets');
+$coursGDP->addToProgramContent('Les intervenants');
+$coursGDP->addToProgramContent('La communication');
+
+
 $coursGDP->setNumberOfHours(35);
 $coursGDP->setPrice(490);
 $coursGDP->setClassDate('sept 2022');

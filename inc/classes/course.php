@@ -296,4 +296,17 @@ class Course {
         return $this;
     }
 
+    // Méthodes
+    /**
+     * Add a new content in $programContent
+     *
+     * @param string $content
+     * @return self
+     */
+    public function addToProgramContent(string $content): self
+    {
+        array_push($this->programContent, $content);
+        return $this;
+    }
+
 }
