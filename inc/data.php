@@ -1,7 +1,9 @@
 <?php
 
 // import des classes
+require_once('classes/coreModel.php');
 require_once('classes/course.php');
+require_once('classes/professor.php');
 
 /* instanciation de la classe Course pour obtenir un nouvel objet
 qui sera stocké dans la variable $coursPhp */

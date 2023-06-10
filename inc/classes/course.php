@@ -1,6 +1,6 @@
 <?php
 
-class Course {
+class Course extends CoreModel {
     // Définition des propriétés de notre cours
     private string $title;
     private string $image;
@@ -26,10 +26,12 @@ class Course {
         string $classDate = '',
         string $professor = '',
         string $modality = '',
-        string $requiredLevel = ''
+        string $requiredLevel = '',
+        int $id = 0
     )
     {
         // Affectation des valeurs rentrée en paramètre du contructeur dans les propriétés de l'instance de la classe
+        $this->id = $id;
         $this->title = $title;
         $this->image = $image;
         $this->shortDescription = $shortDescription;
@@ -41,6 +43,21 @@ class Course {
         $this->professor = $professor;
         $this->modality = $modality;
         $this->requiredLevel = $requiredLevel;
+        $this->dateCreated = date('d-m-y h:i:s');
+        $this->dateUpdated = date('d-m-y h:i:s');
+    }
+
+    public function findAll()
+    {
+        echo "je fais rien mais j'existe";
+    }
+    public function update()
+    {
+        echo "je fais rien mais j'existe";
+    }
+    public function add()
+    {
+        echo "je fais rien mais j'existe";
     }
 
     // Assesseurs

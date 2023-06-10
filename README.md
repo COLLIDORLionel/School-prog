@@ -10,6 +10,10 @@ School'prog est notre projet fil rouge pour mettre en pratique les connaissances
    - Ajout des getters et setters manquants.
    - Sécurisation des données de notre objet. Pour cela, on modifiee les setters afin de verifier les données qui sont injectées dans notre objet.
    - Ajout de la méthode `addToProgramContent` qui va ajouter des éléments dans la propriété : `$programContent`.
+- Héritage et abstraction :
+   - Ajout classe CoreModel pour gérer les propriétés communes
+   - Ajout classe professeur
+   - utilisation propriétés communes dans l'ensemble des classes
 
 
 
