@@ -1,6 +1,10 @@
 <?php
 
-abstract class CoreModel {
+require_once(__DIR__ . '/../interfaces/model.php');
+require(__DIR__ . '/../interfaces/dateManager.php');
+
+
+abstract class CoreModel implements Model, DateManager{
     // Ça rend la propriété id privée de l'extérieur de la classe, mais accessible au enfant
     protected int $id;
     protected $dateCreated;
@@ -10,7 +14,7 @@ abstract class CoreModel {
     abstract public function update();
     abstract public function add();
 
-    /**
+    /** 
      * Méthode générique qui fera soit un update soit un add
      *
      * @return void

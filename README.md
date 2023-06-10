@@ -14,7 +14,9 @@ School'prog est notre projet fil rouge pour mettre en pratique les connaissances
    - Ajout classe CoreModel pour gérer les propriétés communes
    - Ajout classe professeur
    - utilisation propriétés communes dans l'ensemble des classes
-
+- Interfaces:
+   - Ajout interface model pour obliger l'implémentation des methode getId et save
+   - Ajout interface dateManager pour obliger l'implémentation des methode getDateCreated et getDateUpdated
 
 
 [//]: # (les Liens utilisés dans l'ensemble du document sont tous listés ici.)

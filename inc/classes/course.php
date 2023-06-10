@@ -47,19 +47,6 @@ class Course extends CoreModel {
         $this->dateUpdated = date('d-m-y h:i:s');
     }
 
-    public function findAll()
-    {
-        echo "je fais rien mais j'existe";
-    }
-    public function update()
-    {
-        echo "je fais rien mais j'existe";
-    }
-    public function add()
-    {
-        echo "je fais rien mais j'existe";
-    }
-
     // Assesseurs
 
      /**
@@ -324,6 +311,19 @@ class Course extends CoreModel {
     {
         array_push($this->programContent, $content);
         return $this;
+    }
+    
+    public function findAll()
+    {
+        echo "je fais rien mais j'existe";
+    }
+    public function update()
+    {
+        echo "je fais rien mais j'existe";
+    }
+    public function add()
+    {
+        echo "je fais rien mais j'existe";
     }
 
 }
