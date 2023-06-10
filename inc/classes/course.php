@@ -1,6 +1,9 @@
 <?php
 
+require_once(__DIR__ . '/../traits/log.php');
+
 class Course extends CoreModel {
+    use Log;
     // Définition des propriétés de notre cours
     private string $title;
     private string $image;
@@ -68,6 +71,7 @@ class Course extends CoreModel {
     public function setTitle(string $title): self
     {
         $this->title = $title;
+        $this->whriteLog("Le tritre à été modifié");
 
         return $this;
     }
@@ -113,6 +117,7 @@ class Course extends CoreModel {
     public function setShortDescription(string $shortDescription): self
     {
         $this->shortDescription = $shortDescription;
+        $this->whriteLog("La description à été modifié");
         return $this;
     }
 
@@ -157,6 +162,7 @@ class Course extends CoreModel {
     public function setProgramContent(array $programContent): self
     {
         $this->programContent = $programContent;
+        $this->whriteLog("Le contenu du programme à été modifié");
         return $this;
     }
 
@@ -312,7 +318,7 @@ class Course extends CoreModel {
         array_push($this->programContent, $content);
         return $this;
     }
-    
+
     public function findAll()
     {
         echo "je fais rien mais j'existe";

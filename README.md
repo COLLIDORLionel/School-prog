@@ -17,7 +17,9 @@ School'prog est notre projet fil rouge pour mettre en pratique les connaissances
 - Interfaces:
    - Ajout interface model pour obliger l'implémentation des methode getId et save
    - Ajout interface dateManager pour obliger l'implémentation des methode getDateCreated et getDateUpdated
-
+- Traits
+   - Ajout trait log
+   - Utilisation trait dans autres classes
 
 [//]: # (les Liens utilisés dans l'ensemble du document sont tous listés ici.)
 

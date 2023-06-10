@@ -1,7 +1,10 @@
 <?php
 
+require_once(__DIR__ . '/../traits/log.php');
+
 class Professor extends CoreModel {
 
+    use Log;
     private string $firstName;
     private string $lastName;
 
@@ -51,6 +54,7 @@ class Professor extends CoreModel {
     public function setFirstName(string $firstName): self
     {
         $this->firstName = $firstName;
+        $this->whriteLog("Le nom de famille à été modifié");
         return $this;
     }
 
@@ -71,6 +75,7 @@ class Professor extends CoreModel {
     public function setLastName(string $lastName): self
     {
         $this->lastName = $lastName;
+        $this->whriteLog("Le prénom à été modifié");
         return $this;
     }
 
