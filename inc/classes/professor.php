@@ -17,24 +17,6 @@ class Professor extends CoreModel {
         $this->dateUpdated = date('d-m-y h:i:s');
     }
 
-    public function getProfName (): string
-    {
-        return $this->firstName . " " . $this->lastName . " (" . $this->id . ")";
-    }
-
-    public function findAll()
-    {
-        echo "je fais rien mais j'existe";
-    }
-    public function update()
-    {
-        echo "je fais rien mais j'existe";
-    }
-    public function add()
-    {
-        echo "je fais rien mais j'existe";
-    }
-
     /**
      * Get the value of firstName
      * 
@@ -79,6 +61,30 @@ class Professor extends CoreModel {
         return $this;
     }
 
+    
+    public function getProfName (): string
+    {
+        return $this->firstName . " " . $this->lastName . " (" . $this->id . ")";
+    }
 
+    public function findAll()
+    {
+        echo "je fais rien mais j'existe";
+    }
+    public function update()
+    {
+        echo "je fais rien mais j'existe";
+    }
+    public function add()
+    {
+        echo "je fais rien mais j'existe";
+    }
+
+    public static function findById($id): array
+    {
+        $pdo = DB::connect();
+        $result = $pdo->query("SELECT * FROM professor WHERE id = $id");
+        return $result->fetch(PDO::FETCH_ASSOC);
+    }
 
 }

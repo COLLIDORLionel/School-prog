@@ -20,6 +20,12 @@ School'prog est notre projet fil rouge pour mettre en pratique les connaissances
 - Traits
    - Ajout trait log
    - Utilisation trait dans autres classes
+- Ajout PDO
+   - Ajout ficher sql pour création des tables
+   - Ajout classe db pour utiliser la bdd
+   - Ajout méthode findById dans interface model
+   - 
+
 
 [//]: # (les Liens utilisés dans l'ensemble du document sont tous listés ici.)
 

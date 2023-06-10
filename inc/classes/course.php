@@ -332,4 +332,11 @@ class Course extends CoreModel {
         echo "je fais rien mais j'existe";
     }
 
+    public static function findById($id): array
+    {
+        $pdo = DB::connect();
+        $result = $pdo->query("SELECT * FROM course WHERE id = $id");
+        return $result->fetch(PDO::FETCH_ASSOC);
+    }
+
 }

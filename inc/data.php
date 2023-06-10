@@ -116,3 +116,10 @@ $courses = [
     4 => $coursCM,
     5 => $coursAdminSys
 ];
+
+// Liste des professeurs
+$professors = [
+    new Professor(1, 'Nicolas', 'Ramel'),
+    new Professor(2, 'Pierre', 'Castin'),
+    new Professor(3, 'Alexandre', 'Bareau')
+];
